@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* === MAIN GRID === */
+
+.main-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 13% 87%;
+}
+
+.main-grid-1 {
+    height: 100%;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.main-grid-2 {
+    height: 100%;;
+    background-color: #f6f6f6;
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    /* grid-gap: 10px; */
+}
+
+
+
+
+/* === SIDEBAR === */
+
+.sidebar-header {
+    grid-row: 1 / 2;
+    background-color: #08223d;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #999;
+}
+
+.sidebar-header-image {
+    height: 50px;
+    width: 50px;
+    opacity: .5;
+    transition: all .3s;
+}
+
+.sidebar-header-image:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.sidebar-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* color: #587391; */
+}
+
+.sidebar-name {
+    font-weight: 300;
+    color: #fefefe;
+}
+
+.sidebar-userclass {
+    font-weight: 300;
+    color: #587391;
+}
+
+
+
+
+.sidebar-content {
+    background-color: #0c2e54;
+    grid-row: 2 / -1;
+}
+
+.sidebar-title {
+    margin: 30px 15px 15px 10px;
+    color: #eeeff0;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.sidebar-main-items {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-main-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #587391;
+    color: #fefefe;
+    opacity: .7;
+    position: relative;
+    transition: all .3s;
+}
+
+
+.sidebar-main-item:hover {
+    opacity: 1;
+    background-color: #587391;
+    cursor: pointer;
+}
+
+.sidebar-main-item--icon {
+    margin: 0 15px;
+}
+
+.sidebar-main-item--active {
+    opacity: 1;
+    background-color: #587391;
+}
+
+.sidebar-main-item--active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 98%;
+    height: 100%;
+    width: 2%;
+    background-color: #3a80cf;
+}
+
+
+
+
+/* === MAIN VIEW === */
+
+.mainview-content {
+    grid-row: 2 / -1;
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+    grid-template-rows: repeat(20, 5%);
+}
+
+.mainview-header {
+    grid-row: 1 / 2;
+    position: relative;
+    border-bottom: 1px solid #587391;
+}
+
+.mainview-title {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
+    font-size: 35px;
+    letter-spacing: 1.5px;
+    color: #253c57;
+}
+
+.mainview-content-title {
+    grid-column: 3 / 4;
+    grid-row: 6 / 7;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 50px;
+    color: #0c2e54;
+    border-bottom: 1px solid #0c2e54;
+}
+
+.mainview-vpslist {
+    grid-column: 3 / 4;
+    grid-row: 7 / 15;
+}
+
+.vpslist {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.vpslist-item {
+    padding: 15px 0;
+    color: #0c2e54;
+    opacity: .65;
+    transition: all .2s;
+}
+
+.vpslist-item--active {
+    opacity: 1;
+}
+
+.vpslist-item:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.vpsimg {
+    grid-column: 6 / 8;
+    grid-row: 3 / 7;
+}
+
+.vpsimg-style {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.vps-info {
+    grid-column: 8 / 12;
+    grid-row: 4 / 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.vps-name {
+    color: #0c2e54;
+}
+
+.vps-ip {
+    margin: 10px 0;
+    opacity: .75;
+}
+
+.vps-des {
+    opacity: .75;
+}
+
+.vps-options {
+    grid-column: 6 / 16;
+    grid-row: 9 / 10;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vps-option {
+    opacity: .75;
+    color: #0c2e54;
+    position: relative;
+    transition: all .2s;
+    margin-top: 8px;
+}
+
+.vps-option i {
+    margin-right: 3px;
+}
+
+.vps-option:hover {
+    opacity: 1;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(4, 26, 54, 0.75);
+}
+
+.vps-option--active {
+    opacity: 1;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(4, 26, 54, 0.75);
+}
+
+.vps-option::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 10px;
+    background-color: #0c2e54;
+}
+
+.vps-management {
+    grid-column: 6 / 16;
+    grid-row: 10 / 18;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
